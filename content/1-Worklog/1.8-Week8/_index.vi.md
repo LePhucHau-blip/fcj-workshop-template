@@ -1,59 +1,44 @@
 ---
-title: "Worklog Tuần 8"
+title: "Nhật ký công việc Tuần 8"
 date: 2024-01-01
 weight: 1
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+## Tuần 8: Đánh giá bảo mật, độ tin cậy và CI/CD
+**Thời gian: 05/06/2026 - 09/06/2026**
 
-### Mục tiêu tuần 8:
+### Mục tiêu của tuần:
+- Đánh giá lại dự án theo phương pháp **AWS Well-Architected Framework** (Security, Reliability).
+- Chuẩn bị triển khai Frontend và xây dựng quy trình CI/CD.
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Kiến thức AWS:
+- AWS Well-Architected Framework.
+- Least Privilege, Encryption at Rest và Encryption in Transit.
+- DynamoDB Point-In-Time Recovery (PITR).
+- CloudFront, Origin Access Control (OAC).
+- Kiến thức cơ bản về CI/CD.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Công việc thực hiện:
 
+| Ngày | Công việc | Thời gian | Tài liệu tham khảo |
+|---|---|---|---|
+| 1 | Rà soát các thành phần S3, IAM, Cognito, API Gateway theo AWS Well-Architected Framework | 05/06/2026 | https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html |
+| 2 | Kiểm tra DynamoDB PITR và Removal Policy trong dự án | 06/06/2026 | https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PointInTimeRecovery.html |
+| 3 | Kiểm tra việc thiếu DLQ/On-failure Destination và đánh giá Public Route `/v1/images/public` | 07/06/2026 | Mã nguồn của Repository |
+| 4 | Đọc file `frontend-stack.ts`, tìm hiểu lý do CloudFront hiện đang bị vô hiệu hóa | 08/06/2026 | https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html |
+| 5 | Chạy `cdk synth` / `cdk diff`, đề xuất Pipeline GitHub Actions (Lint, Build, Test) | 09/06/2026 | https://docs.github.com/en/actions |
 
-### Kết quả đạt được tuần 8:
+### Kết quả đạt được:
+- Hoàn thành đánh giá tổng quan dự án theo AWS Well-Architected Framework.
+- Hoàn thành Checklist kiểm tra bảo mật hệ thống.
+- Xây dựng danh sách các vấn đề cần cải thiện về độ tin cậy (Reliability Improvement Backlog).
+- Đề xuất quy trình CI/CD tối thiểu bao gồm:
+  - Lint.
+  - Build.
+  - Test.
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+### Tự đánh giá:
+- Hệ thống hiện tại đã đủ an toàn để triển khai trong môi trường Production hay chưa?
+- Kịch bản lỗi nghiêm trọng nhất có thể xảy ra đối với hệ thống là gì?

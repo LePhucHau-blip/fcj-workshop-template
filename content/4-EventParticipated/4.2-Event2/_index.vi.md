@@ -1,125 +1,70 @@
 ---
-title: "Event 2"
+title: "Sự kiện 2"
 date: 2024-01-01
-weight: 1
+weight: 2
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+# Báo cáo tổng kết: "Vòng chung kết Cuộc thi Kiến thức AWS và các buổi chia sẻ kỹ thuật về AWS Security Agent & Amazon CloudWatch"
 
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
+## Thông tin chung
 
-### Mục Đích Của Sự Kiện
+- **Tên sự kiện:** Chưa xác định (sẽ cập nhật sau)
+- **Thời gian:** Sẽ cập nhật sau
+- **Địa điểm:** Sẽ cập nhật sau
+- **Vai trò:** Người tham dự
 
-- Chia sẻ best practices trong thiết kế ứng dụng hiện đại
-- Giới thiệu phương pháp DDD và event-driven architecture
-- Hướng dẫn lựa chọn compute services phù hợp
-- Giới thiệu công cụ AI hỗ trợ development lifecycle
+## Nội dung trình bày và điểm nổi bật
 
-### Danh Sách Diễn Giả
+### 1. Vòng chung kết cuộc thi tìm hiểu kiến thức về các dịch vụ AWS
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+**Người dẫn chương trình:** Anh Long
 
-### Nội Dung Nổi Bật
+**Nội dung:** Chương trình mở đầu bằng vòng chung kết cuộc thi kiểm tra kiến thức về các dịch vụ của AWS. Những thí sinh vượt qua các vòng trước đã tham gia tranh tài bằng cách trả lời các câu hỏi liên quan đến những khái niệm cốt lõi của AWS, các trường hợp sử dụng dịch vụ và những thực tiễn tốt nhất khi triển khai trên nền tảng đám mây. Hình thức thi đấu tạo không khí sôi động, thu hút sự tham gia của khán giả và giúp củng cố kiến thức AWS theo hướng thực tiễn thay vì chỉ ghi nhớ lý thuyết. Trong suốt chương trình, anh Long điều phối cuộc thi và giải thích thêm các khái niệm quan trọng khi cần thiết.
 
-#### Đưa ra các ảnh hưởng tiêu cực của kiến trúc ứng dụng cũ
+### 2. Giới thiệu và trình diễn AWS Security Agent
 
-- Thời gian release sản phẩm lâu → Mất doanh thu/bỏ lỡ cơ hội
-- Hoạt động kém hiệu quả → Mất năng suất, tốn kém chi phí
-- Không tuân thủ các quy định về bảo mật → Mất an ninh, uy tín
+**Diễn giả:** Anh Thịnh
 
-#### Chuyển đổi sang kiến trúc ứng dụng mới - Microservice Architecture
+**Nội dung:** Bài trình bày giới thiệu **AWS Security Agent**, một dịch vụ bảo mật ứng dụng sử dụng AI nhằm hỗ trợ các nhóm phát triển phần mềm phát hiện và khắc phục lỗ hổng bảo mật nhanh hơn so với các công cụ truyền thống. Diễn giả giải thích rằng dịch vụ này không chỉ dừng lại ở việc phân tích mã nguồn theo mẫu (pattern matching), mà còn có khả năng phân tích kiến trúc hệ thống, ranh giới tin cậy (trust boundaries) và luồng dữ liệu để phát hiện các lỗ hổng bảo mật ở mức thiết kế mà các công cụ quét thông thường thường bỏ sót.
 
-Chuyển đổi thành hệ thống modular – từng chức năng là một **dịch vụ độc lập** giao tiếp với nhau qua **sự kiện** với 3 trụ cột cốt lõi:
+Phần trình diễn giới thiệu các tính năng chính của dịch vụ, bao gồm:
 
-- **Queue Management**: Xử lý tác vụ bất đồng bộ
-- **Caching Strategy:** Tối ưu performance
-- **Message Handling:** Giao tiếp linh hoạt giữa services
+- **Rà soát toàn bộ mã nguồn (Full Repository Code Review):** Quét toàn bộ kho mã nguồn được kết nối từ GitHub, GitLab hoặc Bitbucket, sau đó đưa ra các cảnh báo gắn với từng tệp và dòng mã cụ thể, đồng thời đánh giá mức độ nghiêm trọng và độ tin cậy của từng lỗ hổng.
+- **Khắc phục lỗ hổng tự động (Automated Remediation):** AI tự động tạo bản vá cho các vấn đề đã phát hiện. Đối với kho mã nguồn riêng tư, hệ thống có thể tạo Pull Request trực tiếp; đối với kho công khai, hệ thống cung cấp tệp diff để tránh công khai lỗ hổng trước khi được khắc phục.
+- **Phân tích mô hình đe dọa (Threat Modeling):** Phân tích tài liệu thiết kế hoặc mã nguồn để xác định các mối đe dọa bảo mật và đề xuất biện pháp giảm thiểu dựa trên mô hình STRIDE.
+- **Kiểm thử xâm nhập (Penetration Testing):** Cho phép nhóm phát triển xác minh các lỗ hổng và tạo mã khai thác (exploit) trực tiếp thông qua CLI trước khi triển khai ứng dụng lên môi trường thực tế.
+- **Tích hợp với IDE và quy trình phát triển:** Hỗ trợ thực hiện quét bảo mật và khắc phục lỗi trực tiếp từ môi trường phát triển thông qua Kiro, plugin Claude Code hoặc giao thức MCP mở, giúp lập trình viên không cần chuyển đổi giữa nhiều công cụ khác nhau.
 
-#### Domain-Driven Design (DDD)
+Diễn giả cũng nhấn mạnh rằng AWS Security Agent không nhằm thay thế đội ngũ bảo mật mà đóng vai trò hỗ trợ bằng cách tự động phát hiện và xử lý những vấn đề phổ biến, giúp các chuyên gia bảo mật tập trung nhiều hơn vào các quyết định liên quan đến thiết kế và kiến trúc hệ thống.
 
-- **Phương pháp 4 bước**: Xác định domain events → sắp xếp timeline → identify actors → xác định bounded contexts
-- **Case study bookstore**: Minh họa cách áp dụng DDD thực tế
-- **Context mapping**: 7 patterns tích hợp bounded contexts
+### 3. Tổng quan về Amazon CloudWatch
 
-#### Event-Driven Architecture
+**Nội dung:** Phần trình bày cuối cùng giới thiệu **Amazon CloudWatch**, dịch vụ giám sát và quan sát hệ thống (Monitoring & Observability) của AWS. Diễn giả giải thích cách CloudWatch thu thập các chỉ số (Metrics), nhật ký (Logs) và sự kiện (Events) từ các tài nguyên AWS cũng như ứng dụng, giúp người dùng theo dõi tình trạng hệ thống thông qua Dashboard trực quan, thiết lập cảnh báo khi có dấu hiệu bất thường và hỗ trợ xử lý sự cố gần như theo thời gian thực.
 
-- **3 patterns tích hợp**: Publish/Subscribe, Point-to-point, Streaming
-- **Lợi ích**: Loose coupling, scalability, resilience
-- **So sánh sync vs async**: Hiểu rõ trade-offs (sự đánh đổi)
+Ngoài việc giám sát hạ tầng như máy chủ tính toán, lưu trữ và mạng, CloudWatch còn hỗ trợ quan sát hoạt động của ứng dụng, bao gồm theo dõi **Service Level Objectives (SLOs)** để xác định, giám sát và cảnh báo khi các mục tiêu về độ tin cậy của hệ thống không được đáp ứng. Diễn giả nhấn mạnh rằng CloudWatch là một trong những dịch vụ nền tảng quan trọng giúp duy trì khả năng quan sát hệ thống và chủ động phát hiện sự cố trước khi ảnh hưởng đến người dùng cuối.
 
-#### Compute Evolution
+## Kiến thức tiếp thu và kế hoạch áp dụng
 
-- **Shared Responsibility Model**: Từ EC2 → ECS → Fargate → Lambda
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value
-- **Functions vs Containers**: Criteria lựa chọn phù hợp
+### Kiến thức và tư duy mới:
 
-#### Amazon Q Developer
+- **Củng cố kiến thức AWS thông qua cuộc thi:** Hình thức thi đố vui giúp ghi nhớ và hiểu rõ hơn về các dịch vụ AWS trong thực tế, đồng thời xác định những nội dung cần tiếp tục ôn tập.
+- **Bảo mật ứng dụng bằng AI:** Hiểu rõ hơn cách AWS Security Agent sử dụng AI để tự động phát hiện và khắc phục lỗ hổng bảo mật ở cấp độ kho mã nguồn, vượt xa phương pháp phân tích tĩnh truyền thống bằng cách xem xét kiến trúc và luồng dữ liệu.
+- **Tích hợp bảo mật vào quy trình phát triển:** Nhận thức được cách các công cụ bảo mật hiện đại có thể tích hợp trực tiếp vào IDE, CLI và quy trình CI/CD nhằm giảm thời gian xử lý và nâng cao hiệu quả phát triển phần mềm.
+- **Nền tảng về Monitoring và Observability:** Hiểu rõ hơn vai trò của Amazon CloudWatch trong việc giám sát hệ thống, thiết lập cảnh báo và theo dõi độ tin cậy (SLOs) cho hạ tầng và ứng dụng trên nền tảng đám mây.
 
-- **SDLC automation**: Từ planning đến maintenance
-- **Code transformation**: Java upgrade, .NET modernization
-- **AWS Transform agents**: VMware, Mainframe, .NET migration
+### Kế hoạch áp dụng:
 
-### Những Gì Học Được
+- Ôn tập lại các dịch vụ AWS xuất hiện trong cuộc thi nhằm củng cố kiến thức nền tảng và bổ sung những nội dung còn thiếu.
+- Thử nghiệm AWS Security Agent trên một dự án cá nhân hoặc môi trường thử nghiệm để tìm hiểu quy trình quét bảo mật và tự động khắc phục lỗ hổng.
+- Xây dựng Dashboard và Alarm cơ bản bằng Amazon CloudWatch cho một dự án cá nhân nhằm thực hành các khái niệm về giám sát và cảnh báo.
+- Tìm hiểu cách tích hợp các công cụ bảo mật và giám sát vào quy trình CI/CD để áp dụng trong các dự án phát triển phần mềm trong tương lai.
 
-#### Tư Duy Thiết Kế
+## Hình ảnh sự kiện
 
-- **Business-first approach**: Luôn bắt đầu từ business domain, không phải technology
-- **Ubiquitous language**: Importance của common vocabulary giữa business và tech teams
-- **Bounded contexts**: Cách identify và manage complexity trong large systems
+![Event photo 1](/images/4-eventparticipated/event2-1.jpg)
 
-#### Kiến Trúc Kỹ Thuật
+![Event photo 2](/images/4-eventparticipated/event2-2.jpg)
 
-- **Event storming technique**: Phương pháp thực tế để mô hình hóa quy trình kinh doanh
-- Sử dụng **Event-driven communication** thay vì synchronous calls
-- **Integration patterns**: Hiểu khi nào dùng sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria chọn từ VM → containers → serverless
-
-#### Chiến Lược Hiện Đại Hóa
-
-- **Phased approach**: Không rush, phải có roadmap rõ ràng
-- **7Rs framework**: Nhiều con đường khác nhau tùy thuộc vào đặc điểm của mỗi ứng dụng
-- **ROI measurement**: Cost reduction + business agility
-
-### Ứng Dụng Vào Công Việc
-
-- **Áp dụng DDD** cho project hiện tại: Event storming sessions với business team
-- **Refactor microservices**: Sử dụng bounded contexts để identify service boundaries
-- **Implement event-driven patterns**: Thay thế một số sync calls bằng async messaging
-- **Serverless adoption**: Pilot AWS Lambda cho một số use cases phù hợp
-- **Try Amazon Q Developer**: Integrate vào development workflow để boost productivity
-
-### Trải nghiệm trong event
-
-Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải nghiệm rất bổ ích, giúp tôi có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
-
-#### Học hỏi từ các diễn giả có chuyên môn cao
-- Các diễn giả đến từ AWS và các tổ chức công nghệ lớn đã chia sẻ **best practices** trong thiết kế ứng dụng hiện đại.
-- Qua các case study thực tế, tôi hiểu rõ hơn cách áp dụng **Domain-Driven Design (DDD)** và **Event-Driven Architecture** vào các project lớn.
-
-#### Trải nghiệm kỹ thuật thực tế
-- Tham gia các phiên trình bày về **event storming** giúp tôi hình dung cách **mô hình hóa quy trình kinh doanh** thành các domain events.
-- Học cách **phân tách microservices** và xác định **bounded contexts** để quản lý sự phức tạp của hệ thống lớn.
-- Hiểu rõ trade-offs giữa **synchronous và asynchronous communication** cũng như các pattern tích hợp như **pub/sub, point-to-point, streaming**.
-
-#### Ứng dụng công cụ hiện đại
-- Trực tiếp tìm hiểu về **Amazon Q Developer**, công cụ AI hỗ trợ SDLC từ lập kế hoạch đến maintenance.
-- Học cách **tự động hóa code transformation** và pilot serverless với **AWS Lambda**, từ đó nâng cao năng suất phát triển.
-
-#### Kết nối và trao đổi
-- Workshop tạo cơ hội trao đổi trực tiếp với các chuyên gia, đồng nghiệp và team business, giúp **nâng cao ngôn ngữ chung (ubiquitous language)** giữa business và tech.
-- Qua các ví dụ thực tế, tôi nhận ra tầm quan trọng của **business-first approach**, luôn bắt đầu từ nhu cầu kinh doanh thay vì chỉ tập trung vào công nghệ.
-
-#### Bài học rút ra
-- Việc áp dụng DDD và event-driven patterns giúp giảm **coupling**, tăng **scalability** và **resilience** cho hệ thống.
-- Chiến lược hiện đại hóa cần **phased approach** và đo lường **ROI**, không nên vội vàng chuyển đổi toàn bộ hệ thống.
-- Các công cụ AI như Amazon Q Developer có thể **boost productivity** nếu được tích hợp vào workflow phát triển hiện tại.
-
-#### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
-> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+![Event photo 3](/images/4-eventparticipated/event2-3.jpg)

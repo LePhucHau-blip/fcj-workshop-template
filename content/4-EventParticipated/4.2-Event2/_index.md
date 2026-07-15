@@ -1,126 +1,67 @@
 ---
 title: "Event 2"
 date: 2024-01-01
-weight: 1
+weight: 2
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** into your report, including this warning.
-{{% /notice %}}
+# Summary Report: "AWS Knowledge Quiz Final Round and Technical Presentations on AWS Security Agent & Amazon CloudWatch"
 
-# Summary Report: “GenAI-powered App-DB Modernization workshop”
+## General Event Information
 
-### Event Objectives
+- **Event Name:** Not yet determined (to be filled in)
+- **Time:** To be filled in
+- **Location:** To be filled in
+- **Role:** Attendee
 
-- Share best practices in modern application design
-- Introduce Domain-Driven Design (DDD) and event-driven architecture
-- Provide guidance on selecting the right compute services
-- Present AI tools to support the development lifecycle
+## Presentations & Key Highlights
 
-### Speakers
+### 1. Final Round: AWS Services Knowledge Quiz Competition
 
-- **Jignesh Shah** – Director, Open Source Databases
-- **Erica Liu** – Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** – Assc. Specialist SA, Serverless Amazon Web Services
+**Host:** Mr. Long
 
-### Key Highlights
+**Details:** The session opened with the final round of a quiz competition testing participants' knowledge of AWS services. Contestants who had advanced from earlier rounds competed head-to-head, answering questions covering core AWS concepts, service use cases, and best practices. The competitive format encouraged active engagement from the audience and reinforced practical, applied knowledge of the AWS ecosystem rather than rote memorization, with the host guiding the flow of questions and clarifying key concepts as they came up.
 
-#### Identifying the drawbacks of legacy application architecture
+### 2. Introduction and Demo of AWS Security Agent
 
-- Long product release cycles → Lost revenue/missed opportunities  
-- Inefficient operations → Reduced productivity, higher costs  
-- Non-compliance with security regulations → Security breaches, loss of reputation  
+**Speaker:** Mr. Thinh
 
-#### Transitioning to modern application architecture – Microservices
+**Details:** This presentation introduced AWS Security Agent, an AI-driven security service designed to help teams find and fix vulnerabilities faster than traditional tooling. The speaker explained how the service moves beyond simple pattern-matching static analysis: instead, it reasons about an application's architecture, trust boundaries, and data flows to uncover systemic vulnerabilities that conventional scanners tend to miss.
 
-Migrating to a modular system — each function is an **independent service** communicating via **events**, built on three core pillars:
+The demo walked through the core capabilities of the service, including:
+- **Full repository code review**, which scans an entire codebase (connected via GitHub, GitLab, or Bitbucket) and produces findings tied to specific files and lines of code, along with calibrated severity and confidence ratings.
+- **Automated remediation**, where the agent generates concrete code fixes for identified issues â€” opening pull requests directly for private repositories, or providing a downloadable diff for public repositories so the vulnerability isn't disclosed before it's patched.
+- **Threat modeling**, which analyzes design documents or source code to identify threats and recommend mitigations using the STRIDE framework.
+- **Penetration testing**, allowing teams to validate findings and generate working exploits on demand from the CLI before deploying to production.
+- **IDE and workflow integration**, showing how developers can trigger scans and remediation directly from their development environment via Kiro, a Claude Code plugin, or an open MCP integration â€” without needing to switch context.
 
-- **Queue Management**: Handle asynchronous tasks  
-- **Caching Strategy**: Optimize performance  
-- **Message Handling**: Flexible inter-service communication  
+The speaker emphasized that the tool is meant to complement, not replace, existing security practices â€” surfacing the obvious and semi-obvious issues so that human security teams can focus their limited time on deeper, design-level judgment calls.
 
-#### Domain-Driven Design (DDD)
+### 3. Overview of Amazon CloudWatch
 
-- **Four-step method**: Identify domain events → arrange timeline → identify actors → define bounded contexts  
-- **Bookstore case study**: Demonstrates real-world DDD application  
-- **Context mapping**: 7 patterns for integrating bounded contexts  
+**Details:** The final presentation introduced Amazon CloudWatch, AWS's monitoring and observability service. The speaker covered how CloudWatch collects metrics, logs, and events from AWS resources and applications, enabling teams to visualize system health on dashboards, set alarms for abnormal behavior, and troubleshoot issues in near real time. Emphasis was placed on how CloudWatch supports both infrastructure-level monitoring (compute, storage, networking) and application-level observability, including tracking Service Level Objectives (SLOs) to help teams define, monitor, and get alerted on reliability goals across distributed systems. The presentation highlighted CloudWatch's role as a foundational tool for maintaining operational visibility and proactively catching problems before they affect end users.
 
-#### Event-Driven Architecture
+## Key Takeaways and Action Plan
 
-- **3 integration patterns**: Publish/Subscribe, Point-to-point, Streaming  
-- **Benefits**: Loose coupling, scalability, resilience  
-- **Sync vs async comparison**: Understanding the trade-offs  
+### New Knowledge and Mindset:
 
-#### Compute Evolution
+- **Applied AWS knowledge through competition:** The quiz format reinforced practical understanding of AWS services in an engaging, memorable way, highlighting areas of AWS knowledge worth reviewing further.
+- **AI-driven application security:** Gained a clearer picture of how AI agents like AWS Security Agent can automate vulnerability discovery and remediation at the repository level, going beyond traditional static analysis by reasoning about architecture and data flow.
+- **Security workflow integration:** Learned how modern security tooling can be embedded directly into developer workflows (IDE, CLI, CI/CD) to reduce context switching and speed up the fix cycle.
+- **Observability fundamentals:** Strengthened understanding of how Amazon CloudWatch supports monitoring, alerting, and reliability tracking (SLOs) across cloud infrastructure and applications.
 
-- **Shared Responsibility Model**: EC2 → ECS → Fargate → Lambda  
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value  
-- **Functions vs Containers**: Criteria for appropriate choice  
+### Action Plan:
 
-#### Amazon Q Developer
+- Review the AWS service areas that came up during the quiz to reinforce and fill gaps in foundational AWS knowledge.
+- Explore AWS Security Agent on a personal or sandbox repository to understand its scanning and remediation workflow firsthand.
+- Set up a basic Amazon CloudWatch dashboard and alarm for a personal or test project to practice monitoring and alerting concepts.
+- Look into how security scanning and observability tools can be integrated into a typical CI/CD pipeline for future projects.
 
-- **SDLC automation**: From planning to maintenance  
-- **Code transformation**: Java upgrade, .NET modernization  
-- **AWS Transform agents**: VMware, Mainframe, .NET migration  
+## Event Photos
 
-### Key Takeaways
+![Event photo 1](/images/4-event-participated/event2-1.jpg)
+![Event photo 2](/images/4-event-participated/event2-2.jpg)
+![Event photo 3](/images/4-event-participated/event2-3.jpg)
 
-#### Design Mindset
 
-- **Business-first approach**: Always start from the business domain, not the technology  
-- **Ubiquitous language**: Importance of a shared vocabulary between business and tech teams  
-- **Bounded contexts**: Identifying and managing complexity in large systems  
-
-#### Technical Architecture
-
-- **Event storming technique**: Practical method for modeling business processes  
-- Use **event-driven communication** instead of synchronous calls  
-- **Integration patterns**: When to use sync, async, pub/sub, streaming  
-- **Compute spectrum**: Criteria for choosing between VM, containers, and serverless  
-
-#### Modernization Strategy
-
-- **Phased approach**: No rushing — follow a clear roadmap  
-- **7Rs framework**: Multiple modernization paths depending on the application  
-- **ROI measurement**: Cost reduction + business agility  
-
-### Applying to Work
-
-- **Apply DDD** to current projects: Event storming sessions with business teams  
-- **Refactor microservices**: Use bounded contexts to define service boundaries  
-- **Implement event-driven patterns**: Replace some sync calls with async messaging  
-- **Adopt serverless**: Pilot AWS Lambda for suitable use cases  
-- **Try Amazon Q Developer**: Integrate into the dev workflow to boost productivity  
-
-### Event Experience
-
-Attending the **“GenAI-powered App-DB Modernization”** workshop was extremely valuable, giving me a comprehensive view of modernizing applications and databases using advanced methods and tools. Key experiences included:
-
-#### Learning from highly skilled speakers
-- Experts from AWS and major tech organizations shared **best practices** in modern application design.  
-- Through real-world case studies, I gained a deeper understanding of applying **DDD** and **Event-Driven Architecture** to large projects.  
-
-#### Hands-on technical exposure
-- Participating in **event storming** sessions helped me visualize how to **model business processes** into domain events.  
-- Learned how to **split microservices** and define **bounded contexts** to manage large-system complexity.  
-- Understood trade-offs between **synchronous and asynchronous communication** and integration patterns like **pub/sub, point-to-point, streaming**.  
-
-#### Leveraging modern tools
-- Explored **Amazon Q Developer**, an AI tool for SDLC support from planning to maintenance.  
-- Learned to **automate code transformation** and pilot serverless with **AWS Lambda** to improve productivity.  
-
-#### Networking and discussions
-- The workshop offered opportunities to exchange ideas with experts, peers, and business teams, enhancing the **ubiquitous language** between business and tech.  
-- Real-world examples reinforced the importance of the **business-first approach** rather than focusing solely on technology.  
-
-#### Lessons learned
-- Applying DDD and event-driven patterns reduces **coupling** while improving **scalability** and **resilience**.  
-- Modernization requires a **phased approach** with **ROI measurement**; rushing the process can be risky.  
-- AI tools like Amazon Q Developer can significantly **boost productivity** when integrated into the current workflow.  
-
-#### Some event photos
-*Add your event photos here*  
-
-> Overall, the event not only provided technical knowledge but also helped me reshape my thinking about application design, system modernization, and cross-team collaboration.

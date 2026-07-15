@@ -5,53 +5,37 @@ weight: 1
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
 
-### Week 8 Objectives:
+## Week 8: Security, Reliability Review & CI/CD
+**Duration: 05/06/2026 - 09/06/2026**
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+### Weekly Objectives:
+- Review the project following the AWS Well-Architected approach (Security, Reliability).
+- Prepare for frontend deployment and CI/CD.
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### AWS Knowledge:
+- AWS Well-Architected Framework.
+- Least privilege, encryption at rest/in transit.
+- DynamoDB PITR.
+- CloudFront, Origin Access Control.
+- Basic CI/CD.
 
+### Project Practice:
+| Day | Task | Date | Reference Material |
+|---|---|---|---|
+| 1 | Review S3, IAM, Cognito, API Gateway | 05/06/2026 | https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html |
+| 2 | Review DynamoDB PITR and removal policy | 06/06/2026 | https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PointInTimeRecovery.html |
+| 3 | Check for missing DLQ/on-failure destination, check the public route /v1/images/public | 07/06/2026 | Repo code |
+| 4 | Read frontend-stack.ts, note down why CloudFront is currently disabled | 08/06/2026 | https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html |
+| 5 | Run cdk synth/diff, propose a GitHub Actions pipeline (lint, build, test) | 09/06/2026 | https://docs.github.com/en/actions |
 
-### Week 8 Achievements:
+### Expected Results:
+- Well-Architected mini-review.
+- Security checklist.
+- Reliability improvement backlog.
+- A proposal for a minimal CI/CD pipeline.
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+### Reflection:
+- Is the project secure enough for production?
+- What is the most serious failure scenario?

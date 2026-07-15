@@ -1,58 +1,49 @@
 ---
-title: "Worklog Tuần 6"
+title: "Nhật ký công việc Tuần 6"
 date: 2024-01-01
 weight: 1
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+## Tuần 6: Xử lý hướng sự kiện và Kiểm duyệt hình ảnh bằng AI
+**Thời gian: 22/05/2026 - 26/05/2026**
 
-### Mục tiêu tuần 6:
+### Mục tiêu của tuần:
+- Hiểu quy trình xử lý hình ảnh bất đồng bộ (Asynchronous Image Processing Pipeline) thông qua S3 Event và DynamoDB Stream.
+- Hiểu cách dự án ứng dụng AI để gắn nhãn (Tag) và kiểm duyệt (Moderate) hình ảnh.
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Kiến thức AWS:
+- Kiến trúc hướng sự kiện (Event-driven Architecture).
+- S3 ObjectCreated Event.
+- DynamoDB Streams.
+- Amazon Rekognition:
+  - DetectLabels.
+  - DetectModerationLabels.
+- Confidence Score.
+- Cơ chế Retry Behavior.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Công việc thực hiện:
 
+| Ngày | Công việc | Thời gian | Tài liệu tham khảo |
+|---|---|---|---|
+| 1 | Đọc file `image-processor/src/index.ts` để tìm hiểu quy trình xử lý hình ảnh | 22/05/2026 | https://docs.aws.amazon.com/AmazonS3/latest/userguide/NotificationHowTo.html |
+| 2 | Đọc file `ai-analyzer/src/index.ts` để tìm hiểu quy trình phân tích AI | 23/05/2026 | https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html |
+| 3 | Theo dõi luồng xử lý: Upload → Process → Analyze → Completed | 24/05/2026 | Mã nguồn của Repository |
+| 4 | Đọc các file `labeling.ts`, `moderation.ts`, `tagMapper.ts` | 25/05/2026 | https://docs.aws.amazon.com/rekognition/latest/dg/labels-detect-labels-image.html |
+| 5 | Kiểm tra vòng đời trạng thái hình ảnh và hàng đợi kiểm duyệt của Admin | 26/05/2026 | https://docs.aws.amazon.com/rekognition/latest/dg/moderation.html |
 
-### Kết quả đạt được tuần 6:
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+### Kết quả đạt được:
+- Hoàn thành sơ đồ tuần tự (Sequence Diagram) mô tả Pipeline xử lý hướng sự kiện.
+- Hoàn thành bảng trạng thái vòng đời của hình ảnh:
+  - UPLOADING.
+  - PROCESSING.
+  - COMPLETED.
+  - ERROR.
+- Hoàn thành bảng ánh xạ dữ liệu:
+  - Kết quả trả về từ Amazon Rekognition.
+  - Mô hình dữ liệu của ứng dụng.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+### Tự đánh giá:
+- Nếu Lambda xử lý hình ảnh gặp lỗi, hệ thống sẽ phản ứng và xử lý như thế nào?
+- Hình ảnh bị đánh dấu vi phạm nên được xử lý và hiển thị trên giao diện người dùng như thế nào?

@@ -1,59 +1,40 @@
 ---
-title: "Worklog Tuần 5"
+title: "Nhật ký công việc Tuần 5"
 date: 2024-01-01
 weight: 1
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+## Tuần 5: Thiết kế dữ liệu với DynamoDB
+**Thời gian: 15/05/2026 - 19/05/2026**
 
-### Mục tiêu tuần 5:
+### Mục tiêu của tuần:
+- Hiểu mô hình **Single-table Design** được sử dụng trong dự án.
+- Hiểu khi nào nên sử dụng **Query**, **Scan** và **GSI** trong DynamoDB.
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Kiến thức AWS:
+- DynamoDB Partition Key, Sort Key.
+- Query và Scan.
+- Global Secondary Index (GSI).
+- Projection.
+- On-demand Billing.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Công việc thực hiện:
 
+| Ngày | Công việc | Thời gian | Tài liệu tham khảo |
+|---|---|---|---|
+| 1 | Đọc file `database-stack.ts` để tìm hiểu cấu trúc Database trong dự án | 15/05/2026 | https://docs.aws.amazon.com/amazondynamodb/latest/UserGuide/HowItWorks.html |
+| 2 | Đọc và phân tích các câu truy vấn trong `images.ts`, `search.ts`, `admin.ts` | 16/05/2026 | https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Query.html |
+| 3 | Vẽ mô hình dữ liệu cho các thành phần: Image Metadata, Tag Item, Moderation Item | 17/05/2026 | Ghi chú của dự án |
+| 4 | Xác định các điểm cần tối ưu: Public Gallery hiện tại đang sử dụng Scan | 18/05/2026 | https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.html |
+| 5 | Hoàn thiện tài liệu mô hình dữ liệu và đề xuất GSI cho Public Gallery | 19/05/2026 | Ghi chú của dự án |
 
-### Kết quả đạt được tuần 5:
+### Kết quả đạt được:
+- Hoàn thành tài liệu mô hình dữ liệu (Data Model Document).
+- Hoàn thành bảng phân tích các mẫu truy cập dữ liệu (Access Pattern Table).
+- Đề xuất thiết kế GSI cho chức năng Public Gallery nhằm cải thiện hiệu năng truy vấn.
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+### Tự đánh giá:
+- Mô hình **Single-table Design** mang lại những lợi ích gì cho hệ thống?
+- Mẫu truy cập dữ liệu nào trong hệ thống hiện tại chưa được thiết kế tối ưu?

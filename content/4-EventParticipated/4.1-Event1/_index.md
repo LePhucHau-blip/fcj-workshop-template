@@ -6,121 +6,64 @@ chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** into your report, including this warning.
-{{% /notice %}}
+# Summary Report: "Session on Learning Skills, AI Tools, and IT Career Orientation"
 
-# Summary Report: “GenAI-powered App-DB Modernization workshop”
+## General Event Information
 
-### Event Objectives
+- **Event Name:** Not yet determined (to be filled in)
+- **Time:** 09:00 - 12:00, May 9, 2026
+- **Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu, Sai Gon Ward, Ho Chi Minh City
+- **Role:** Attendee
 
-- Share best practices in modern application design
-- Introduce Domain-Driven Design (DDD) and event-driven architecture
-- Provide guidance on selecting the right compute services
-- Present AI tools to support the development lifecycle
+## Presentations & Key Highlights
 
-### Speakers
+### 1. Effective Learning and Knowledge Retention Methods
 
-- **Jignesh Shah** – Director, Open Source Databases
-- **Erica Liu** – Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** – Assc. Specialist SA, Serverless Amazon Web Services
+**Details:** The speaker analyzed the difference between consuming information through short videos (which provide continuous, instant excitement) and deep, long-term learning (where the sense of excitement only appears once a concrete result is achieved, and usually takes longer to arrive). Based on this, the speaker offered strategies to help learners maintain focus, build sustainable motivation, and cultivate genuine passion for learning, rather than merely seeking short-term stimulation.
 
-### Key Highlights
+### 2. AI Tool for Designing Diagrams and Data Models
 
-#### Identifying the drawbacks of legacy application architecture
+**Details:** The speaker introduced an AI tool capable of automatically assisting with diagram creation, building entities, and generating object/data tables. This tool is particularly useful for the Business Analyst (BA) role, helping to save time when analyzing business requirements and visualizing them into data models/system diagrams.
 
-- Long product release cycles → Lost revenue/missed opportunities  
-- Inefficient operations → Reduced productivity, higher costs  
-- Non-compliance with security regulations → Security breaches, loss of reputation  
+### 3. CV Distribution Strategy and IT Recruitment Requirements in the Age of AI
 
-#### Transitioning to modern application architecture – Microservices
+**Details:** The final presentation focused on how fresh graduates should approach job searching in the information technology industry, including effective CV distribution strategies. The speaker also shared insights from the recruiter's (HR) perspective on the requirements and skills young candidates need in order to adapt as AI becomes a dominant trend in the industry.
 
-Migrating to a modular system — each function is an **independent service** communicating via **events**, built on three core pillars:
+### 4. Automated Prompt Engineering: Enhancing LLM Output Quality
 
-- **Queue Management**: Handle asynchronous tasks  
-- **Caching Strategy**: Optimize performance  
-- **Message Handling**: Flexible inter-service communication  
+**Speaker:** Nguyen Tuan Thinh â€” DevOps/Cloud Engineer, First Cloud AI Journey
 
-#### Domain-Driven Design (DDD)
+**Details:** This presentation focused on the art of communicating effectively with AI through well-crafted prompts. The speaker explained why prompt engineering matters by contrasting vague, generic prompts with clear, detailed ones â€” showing through practical examples (e.g., text summarization, social media content creation) how specificity in a prompt directly improves the quality and usefulness of the AI's output.
 
-- **Four-step method**: Identify domain events → arrange timeline → identify actors → define bounded contexts  
-- **Bookstore case study**: Demonstrates real-world DDD application  
-- **Context mapping**: 7 patterns for integrating bounded contexts  
+The speaker broke down the key components of a great prompt: **Role** (who the model should act as), **Instruction/Task** (what needs to be done), **Context** (relevant background information), **Input Data** (the content to be processed), **Output Format** (the desired structure or style), **Examples** (few-shot demonstrations), and **Constraints/Guidelines** (rules such as word limits or things to avoid). A worked example was shown using an AI "career coach" persona to help improve a self-introduction for an internship application.
 
-#### Event-Driven Architecture
+Practical best practices for mastering LLM prompting were also shared, including: being clear and specific, using directive language, using delimiters to separate different sections of a prompt, describing what the model *should* do rather than only what it should not do, avoiding asking LLMs to perform mathematical calculations directly, allowing the model to respond with "I don't know" when appropriate, and breaking long inputs into smaller segments for better processing.
 
-- **3 integration patterns**: Publish/Subscribe, Point-to-point, Streaming  
-- **Benefits**: Loose coupling, scalability, resilience  
-- **Sync vs async comparison**: Understanding the trade-offs  
+The talk then covered **token economics** â€” explaining that tokens are subword units (not always whole words), that LLMs read and generate text in tokens, that token counts vary across languages, and gave a real pricing example (Claude Opus 4.6: $5.00/1M input tokens, $25.00/1M output tokens) to illustrate how prompt design directly affects AI usage costs.
 
-#### Compute Evolution
+Finally, the speaker introduced several **advanced prompting techniques**: Chain-of-Thought (CoT) prompting for step-by-step reasoning, Self-Consistency (running multiple reasoning paths and selecting the most common answer), Tree-of-Thoughts (ToT) for exploring multiple reasoning branches in parallel, Retrieval-Augmented Generation (RAG), and Role Prompting. The session closed with an introduction to **"Proptimizer,"** a tool/project aimed at automating the prompt engineering process itself.
 
-- **Shared Responsibility Model**: EC2 → ECS → Fargate → Lambda  
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value  
-- **Functions vs Containers**: Criteria for appropriate choice  
+## Key Takeaways and Action Plan
 
-#### Amazon Q Developer
+### New Knowledge and Mindset:
 
-- **SDLC automation**: From planning to maintenance  
-- **Code transformation**: Java upgrade, .NET modernization  
-- **AWS Transform agents**: VMware, Mainframe, .NET migration  
+- **Managing learning motivation:** Gained a clearer understanding of the mechanism behind short-term excitement (from fast entertainment content) versus long-term motivation (from in-depth learning), enabling adjustments to learning habits to avoid relying on instant stimulation.
+- **Applying AI to BA work:** Learned about an AI tool that can support business analysis work, helping to shorten the time needed to manually build diagrams/data models.
+- **Proactive career preparation:** Gained a clearer understanding of the actual requirements employers have in the IT industry today, particularly the expectation that new graduates be able to adapt to AI.
+- **Effective prompt engineering:** Learned the key components of a well-structured prompt (Role, Instruction, Context, Input, Output Format, Examples, Constraints) and practical techniques to write clearer, more specific prompts that yield significantly better AI outputs.
+- **Understanding AI costs and advanced techniques:** Gained insight into how tokens work and how they affect AI usage costs, as well as an overview of advanced prompting strategies (CoT, Self-Consistency, ToT, RAG, Role Prompting) that can improve the accuracy and reliability of AI-generated responses.
 
-### Key Takeaways
+### Action Plan:
 
-#### Design Mindset
+- Apply strategies to maintain focus during long-term learning, and reduce reliance on short-term stimulation sources (short videos) during study time.
+- Explore and try out the AI tool introduced for diagram/data model creation, and apply it to personal exercises or projects related to systems analysis.
+- Prepare a CV and job application in line with the actual employer requirements shared at the event, and proactively develop AI-related skills to increase competitiveness when applying for jobs.
+- Practice writing structured prompts (using the Roleâ€“Instructionâ€“Contextâ€“Inputâ€“Outputâ€“Examplesâ€“Constraints framework) for personal study, coding, and project tasks to improve the quality of AI-assisted work.
+- Apply advanced prompting techniques such as Chain-of-Thought and Role Prompting when working on complex tasks that require step-by-step reasoning, and stay mindful of token usage/cost when designing prompts for real projects.
 
-- **Business-first approach**: Always start from the business domain, not the technology  
-- **Ubiquitous language**: Importance of a shared vocabulary between business and tech teams  
-- **Bounded contexts**: Identifying and managing complexity in large systems  
+## Event Photos
 
-#### Technical Architecture
+![Event photo 1](/images/4-event-participated/event1-1.jpg)
+![Event photo 2](/images/4-event-participated/event1-2.jpg)
+![Event photo 3](/images/4-event-participated/event1-3.jpg)
 
-- **Event storming technique**: Practical method for modeling business processes  
-- Use **event-driven communication** instead of synchronous calls  
-- **Integration patterns**: When to use sync, async, pub/sub, streaming  
-- **Compute spectrum**: Criteria for choosing between VM, containers, and serverless  
-
-#### Modernization Strategy
-
-- **Phased approach**: No rushing — follow a clear roadmap  
-- **7Rs framework**: Multiple modernization paths depending on the application  
-- **ROI measurement**: Cost reduction + business agility  
-
-### Applying to Work
-
-- **Apply DDD** to current projects: Event storming sessions with business teams  
-- **Refactor microservices**: Use bounded contexts to define service boundaries  
-- **Implement event-driven patterns**: Replace some sync calls with async messaging  
-- **Adopt serverless**: Pilot AWS Lambda for suitable use cases  
-- **Try Amazon Q Developer**: Integrate into the dev workflow to boost productivity  
-
-### Event Experience
-
-Attending the **“GenAI-powered App-DB Modernization”** workshop was extremely valuable, giving me a comprehensive view of modernizing applications and databases using advanced methods and tools. Key experiences included:
-
-#### Learning from highly skilled speakers
-- Experts from AWS and major tech organizations shared **best practices** in modern application design.  
-- Through real-world case studies, I gained a deeper understanding of applying **DDD** and **Event-Driven Architecture** to large projects.  
-
-#### Hands-on technical exposure
-- Participating in **event storming** sessions helped me visualize how to **model business processes** into domain events.  
-- Learned how to **split microservices** and define **bounded contexts** to manage large-system complexity.  
-- Understood trade-offs between **synchronous and asynchronous communication** and integration patterns like **pub/sub, point-to-point, streaming**.  
-
-#### Leveraging modern tools
-- Explored **Amazon Q Developer**, an AI tool for SDLC support from planning to maintenance.  
-- Learned to **automate code transformation** and pilot serverless with **AWS Lambda** to improve productivity.  
-
-#### Networking and discussions
-- The workshop offered opportunities to exchange ideas with experts, peers, and business teams, enhancing the **ubiquitous language** between business and tech.  
-- Real-world examples reinforced the importance of the **business-first approach** rather than focusing solely on technology.  
-
-#### Lessons learned
-- Applying DDD and event-driven patterns reduces **coupling** while improving **scalability** and **resilience**.  
-- Modernization requires a **phased approach** with **ROI measurement**; rushing the process can be risky.  
-- AI tools like Amazon Q Developer can significantly **boost productivity** when integrated into the current workflow.  
-
-#### Some event photos
-*Add your event photos here*  
-
-> Overall, the event not only provided technical knowledge but also helped me reshape my thinking about application design, system modernization, and cross-team collaboration.

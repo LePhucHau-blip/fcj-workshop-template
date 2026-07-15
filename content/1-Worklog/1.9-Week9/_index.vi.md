@@ -1,59 +1,49 @@
 ---
-title: "Worklog Tuần 9"
+title: "Nhật ký công việc Tuần 9"
 date: 2024-01-01
 weight: 1
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+## Tuần 9: Hoàn thiện tài liệu và Lộ trình phát triển dự án
+**Thời gian: 12/06/2026 - 16/06/2026**
 
-### Mục tiêu tuần 9:
+### Mục tiêu của tuần:
+- Tổng hợp toàn bộ kiến thức AWS đã học trong 9 tuần.
+- Hoàn thiện tài liệu kỹ thuật cuối kỳ của dự án.
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Kiến thức AWS:
+- Tổng hợp các kiến thức chính:
+  - Serverless Architecture.
+  - Storage.
+  - Database.
+  - Authentication.
+  - AI Services.
+  - Monitoring.
+  - Cost Optimization.
+  - Security.
+- Checklist đánh giá khả năng sẵn sàng triển khai Production (Production Readiness Checklist).
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Công việc thực hiện:
 
+| Ngày | Công việc | Thời gian | Tài liệu tham khảo |
+|---|---|---|---|
+| 1 | Viết tài liệu `architecture.md` mô tả kiến trúc hệ thống | 12/06/2026 | Tài liệu của Repository |
+| 2 | Viết tài liệu `aws-services.md` tổng hợp các dịch vụ AWS được sử dụng | 13/06/2026 | Tài liệu của Repository |
+| 3 | Viết tài liệu `cost-optimization.md` và `well-architected-review.md` | 14/06/2026 | Tài liệu của Repository |
+| 4 | Rà soát toàn bộ tài liệu đã viết trong 9 tuần | 15/06/2026 | Tài liệu của Repository |
+| 5 | Viết tài liệu `roadmap.md` và hoàn thiện báo cáo tổng kết 9 tuần | 16/06/2026 | Tài liệu của Repository |
 
-### Kết quả đạt được tuần 9:
+### Kết quả đạt được:
+- Hoàn thành các tài liệu kỹ thuật:
+  - `architecture.md`.
+  - `aws-services.md`.
+  - `cost-optimization.md`.
+  - `well-architected-review.md`.
+  - `roadmap.md`.
+- Hoàn thành báo cáo tổng kết quá trình học tập và phát triển dự án trong 9 tuần.
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+### Tự đánh giá:
+- Sau 9 tuần, những lĩnh vực AWS nào tôi đã hiểu rõ hơn?
+- Những yếu tố nào vẫn còn thiếu để dự án có thể sẵn sàng triển khai trong môi trường Production?
