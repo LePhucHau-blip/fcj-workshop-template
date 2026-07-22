@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-# Báo cáo tổng kết: "Vòng chung kết Cuộc thi Kiến thức AWS và các buổi chia sẻ kỹ thuật về AWS Security Agent & Amazon CloudWatch"
+# Báo cáo tổng kết: "Cuộc thi Kiến thức AWS & Các buổi Chia sẻ Kỹ thuật"
 
 ## Thông tin chung
 

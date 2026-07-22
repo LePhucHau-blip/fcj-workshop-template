@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-# Summary Report: "Session on Learning Skills, AI Tools, and IT Career Orientation"
+# Summary Report: "AI, Learning Skills & IT Career Orientation"
 
 ## General Event Information
 

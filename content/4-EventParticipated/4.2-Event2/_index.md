@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-# Summary Report: "AWS Knowledge Quiz Final Round and Technical Presentations on AWS Security Agent & Amazon CloudWatch"
+# Summary Report: "AWS Knowledge Quiz & Technical Talks"
 
 ## General Event Information
 

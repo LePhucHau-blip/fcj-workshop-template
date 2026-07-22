@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-# Báo cáo tổng kết: "Buổi chia sẻ về kỹ năng học tập, công cụ AI và định hướng nghề nghiệp CNTT"
+# Báo cáo tổng kết: "AI, Kỹ năng học tập & Định hướng nghề nghiệp IT"
 
 ## Thông tin chung
 
